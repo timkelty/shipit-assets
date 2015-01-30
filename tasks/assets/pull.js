@@ -7,7 +7,7 @@ var mkdirp = require('mkdirp');
 var chalk = require('chalk');
 
 module.exports = function (gruntOrShipit) {
-  registerTask(gruntOrShipit, 'assets-pull', task);
+  registerTask(gruntOrShipit, 'assets:pull', task);
 
   function task() {
     var shipit = getShipit(gruntOrShipit);
