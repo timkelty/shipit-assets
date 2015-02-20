@@ -1,17 +1,11 @@
-/* jshint unused:false */
-var registerTask = require('../../lib/register-task');
-var getShipit = require('../../lib/get-shipit');
-var path = require('path');
-var Promise = require('bluebird');
-var mkdirp = require('mkdirp');
-var chalk = require('chalk');
+var utils = require('shipit-utils');
 var transfer = require('../../lib/transfer');
 
 module.exports = function (gruntOrShipit) {
-  var shipit = getShipit(gruntOrShipit);
+  var shipit = utils.getShipit(gruntOrShipit);
   shipit = transfer(shipit);
 
-  registerTask(gruntOrShipit, 'assets:push', function() {
+  utils.registerTask(gruntOrShipit, 'assets:push', function() {
     return shipit.transfer('localToRemote');
   });
 };
