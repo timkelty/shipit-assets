@@ -1,4 +1,4 @@
-# shipit-assest
+# shipit-assets
 
 Asset syncing tasks for [Shipit](https://github.com/shipitjs/shipit).
 
