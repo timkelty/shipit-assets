@@ -45,6 +45,40 @@ Pull your remote assets to local:
 shipit staging assets:pull
 ```
 
+### Example `Gruntfile.js`
+```js
+grunt.initConfig({
+    shipit: {
+      options: {
+        workspace: '/tmp/github-monitor',
+        deployTo: '/tmp/deploy_to',
+        repositoryUrl: 'https://github.com/user/repo.git',
+        ignores: ['.git', 'node_modules'],
+        keepReleases: 2,
+        key: '/path/to/key',
+        shallowClone: true,
+        assets: {
+          'paths': [
+            'public/uploads',
+            'backup'
+          ]
+        },
+      },
+      staging: {
+        servers: 'user@myserver.com'
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-shipit');
+  grunt.loadNpmTasks('shipit-deploy');
+  grunt.loadNpmTasks('shipit-assets');
+```
+
+To run shipit-assets you have to call:
+`grunt shipit:staging assets:push`
+
+
 ## Options (`shipit.config.assets`)
 
 ### `assets.paths`
