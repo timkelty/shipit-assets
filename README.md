@@ -97,6 +97,15 @@ If your local paths are mapped differently than remote, you may specify here. If
 
 Options to pass to [`shipit.remoteCopy`](https://github.com/shipitjs/shipit#shipitremotecopysrc-dest-options-callback).
 
+## Workflow tasks
+
+- assets:push
+  - Push assets from local to remote.
+  - Emit event "assetsPush".
+- assets:pull
+  - Pull assets from remote to local.
+  - Emit event "assetsPull".
+
 ## License
 
 MIT
