@@ -5,7 +5,7 @@ module.exports = function (gruntOrShipit) {
   utils.registerTask(gruntOrShipit, 'assets:pull', function() {
     var shipit = utils.getShipit(gruntOrShipit);
     _.assign(shipit.constructor.prototype, require('../../lib/transfer'));
-
+    shipit.emit('assetsPull');
     return shipit.transfer('remoteToLocal');
   });
 };
