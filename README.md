@@ -93,6 +93,18 @@ Type: `Array`
 
 If your local paths are mapped differently than remote, you may specify here. If specified, the array must have the same length as `assets.paths`. Default: `assets.paths`
 
+### `assets.localBasePath`
+
+Type: `String`
+
+If there is a sub/parent folder that the localPaths are based out of (e.g. a directory called "assets") this can be set as a prefix which all local relative paths evaluate from. Default: `process.cwd()` (directory from where shipit was originally launched from).
+
+### `assets.remoteBasePath`
+
+Type: `String`
+
+If there is a sub/parent folder that the paths are based out of (e.g. a directory called "assets") this can be set as a prefix from which all remote relative paths evaluate from. Default: `deployTo/shared`.
+
 ### `assets.options`
 
 Options to pass to [`shipit.remoteCopy`](https://github.com/shipitjs/shipit#shipitremotecopysrc-dest-options-callback).
